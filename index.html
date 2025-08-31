@@ -171,45 +171,56 @@
             color: #0d2f4e;
         }
 
-        /* Trust Bar */
-        .trust-bar {
-            background: #f8f9fa;
-            padding: 2rem 0;
-            text-align: center;
-        }
+/* Trust Bar */
+.trust-bar {
+    background: #f8f9fa;
+    padding: 2rem 0;
+    text-align: center;
+}
 
-        .trust-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+.trust-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-        .trust-content h3 {
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.trust-content h3 {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .client-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
+.client-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
 
-        .client-logo {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #666;
-            padding: 1rem 2rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            background: #fff;
-        }
+/* ✅ Fix: uniform logo size */
+.client-logo {
+    width: 120px;              /* Fixed width for all logos */
+    height: 60px;              /* Fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+
+/* If using images inside */
+.client-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;       /* Auto adjust without distortion */
+    display: block;
+}
 
         /* Services Section */
         .services {
