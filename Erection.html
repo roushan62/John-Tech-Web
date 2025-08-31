@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Erection & Fabrication - Scaffolding Supply & Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #0d2f4e;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #e67e22;
+        }
+
+        .quote-btn {
+            background: #e67e22;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .quote-btn:hover {
+            background: #d35400;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Service Hero Section */
+        .service-hero {
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(13, 47, 78, 0.7), rgba(13, 47, 78, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23333" width="1200" height="800"/><rect fill="%23555" x="0" y="600" width="1200" height="200"/><g stroke="%23888" stroke-width="6" fill="%23666"><rect x="100" y="300" width="200" height="20"/><rect x="150" y="200" width="100" height="120"/><rect x="400" y="250" width="300" height="25"/><rect x="500" y="150" width="100" height="125"/><rect x="750" y="280" width="250" height="22"/><rect x="850" y="180" width="100" height="122"/></g><g stroke="%23999" stroke-width="3" fill="none"><line x1="200" y1="200" x2="200" y2="320"/><line x1="550" y1="150" x2="550" y2="275"/><line x1="900" y1="180" x2="900" y2="302"/><circle cx="200" cy="200" r="8"/><circle cx="550" cy="150" r="8"/><circle cx="900" cy="180" r="8"/></g><g fill="%23aaa"><rect x="120" y="340" width="160" height="8"/><rect x="420" y="295" width="260" height="8"/><rect x="770" y="322" width="210" height="8"/></g><text x="600" y="450" fill="%23bbb" font-size="24" text-anchor="middle">Steel Structure Engineering</text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 1rem 0;
+        }
+
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Detailed Description */
+        .service-description {
+            padding: 4rem 0;
+            background: #ffffff;
+        }
+
+        .description-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .description-content h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.5rem;
+            color: #0d2f4e;
+            margin-bottom: 2rem;
+        }
+
+        .description-content p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* What We Offer */
+        .what-we-offer {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.5rem;
+            color: #0d2f4e;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .offering-card {
+            background: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #e67e22;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .offering-card i {
+            font-size: 3.5rem;
+            color: #e67e22;
+            margin-bottom: 1.5rem;
+        }
+
+        .offering-card h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.4rem;
+            color: #0d2f4e;
+            margin-bottom: 1rem;
+        }
+
+        .offering-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Project Gallery */
+        .project-gallery {
+            padding: 4rem 0;
+            background: #ffffff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #333, #555);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(13, 47, 78, 0.9));
+            color: #ffffff;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Process Overview */
+        .process-overview {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e67e22;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .process-step i {
+            font-size: 2.5rem;
+            color: #0d2f4e;
+            margin: 1rem 0;
+        }
+
+        .process-step h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.3rem;
+            color: #0d2f4e;
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Service CTA */
+        .service-cta {
+            background: linear-gradient(135deg, #0d2f4e, #1a4c7a);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #e67e22;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: #ffffff;
+            color: #0d2f4e;
+        }
+
+        /* Footer */
+        .footer {
+            background: #222222;
+            color: #ffffff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #e67e22;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #e67e22;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+        }
+
+        .contact-form button {
+            background: #e67e22;
+            color: #fff;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #d35400;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #e67e22;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: #0d2f4e;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .description-content h2 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .offerings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Scaffolding Supply & Services</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#quote" class="quote-btn">Get a Quote</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > Steel Erection & Fabrication
+        </div>
+    </section>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="hero-content">
+            <h1>Steel Erection & Fabrication</h1>
+            <p>Expert steel structure design, fabrication, and erection for industrial excellence</p>
+        </div>
+    </section>
+
+    <!-- Detailed Description -->
+    <section class="service-description">
+        <div class="container">
+            <div class="description-content">
+                <h2>Precision Steel Engineering for Industrial Infrastructure</h2>
+                <p>At Scaffolding Supply & Services, we deliver comprehensive steel erection and fabrication services that form the backbone of industrial infrastructure. Our expert engineering team combines advanced design capabilities with precision fabrication techniques to create robust steel structures that meet the demanding requirements of modern industrial facilities.</p>
+                <p>With decades of experience in steel construction, our certified welders and erection specialists ensure every project meets stringent quality standards and safety regulations. From complex industrial frameworks to specialized equipment supports, we provide engineered solutions that deliver long-lasting performance and structural integrity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Offer -->
+    <section class="what-we-offer">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>Complete steel fabrication and erection services for industrial applications</p>
+            </div>
+            <div class="offerings-grid">
+                <div class="offering-card">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h3>Custom Steel Design & Engineering</h3>
+                    <p>Advanced CAD design and structural engineering services for complex industrial steel structures. Our engineers create optimized designs that meet load requirements and safety standards.</p>
+                </div>
+                <div class="offering-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Precision Fabrication Services</h3>
+                    <p>State-of-the-art fabrication facility with modern equipment for cutting, welding, and forming steel components. Quality control at every stage ensures precision and durability.</p>
+                </div>
+                <div class="offering-card">
+                    <i class="fas fa-crane"></i>
+                    <h3>Professional Steel Erection</h3>
+                    <p>Expert erection teams with specialized equipment for safe and efficient installation of steel structures. Certified riggers and crane operators ensure precise positioning and assembly.</p>
+                </div>
+                <div class="offering-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Quality Assurance & Testing</h3>
+                    <p>Comprehensive quality control including weld testing, structural inspections, and compliance certification. All work meets international standards and industry specifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="project-gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Steel Fabrication Project Gallery</h2>
+                <p>Showcasing our expertise in steel structure design, fabrication, and erection</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">Industrial Framework Structure</div>
+                    <div class="gallery-overlay">
+                        <h3>Manufacturing Plant Framework</h3>
+                        <p>Heavy-duty steel framework for industrial equipment support and access platforms</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">Structural Steel Erection</div>
+                    <div class="gallery-overlay">
+                        <h3>Petrochemical Facility</h3>
+                        <p>Complex steel structure erection for process equipment and piping support systems</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">Custom Steel Fabrication</div>
+                    <div class="gallery-overlay">
+                        <h3>Power Generation Plant</h3>
+                        <p>Precision-fabricated steel components for turbine housing and support structures</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">Industrial Steel Assembly</div>
+                    <div class="gallery-overlay">
+                        <h3>Chemical Processing Unit</h3>
+                        <p>Specialized steel structures designed for corrosive environments and high-load applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Overview -->
+    <section class="process-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>A systematic approach to delivering precision steel fabrication and erection services</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-drafting-compass"></i>
+                    <h3>Design & Engineering</h3>
+                    <p>Comprehensive structural analysis and custom design development using advanced CAD software and engineering calculations.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Detailed Proposal</h3>
+                    <p>Complete project proposal including technical drawings, material specifications, timeline, and competitive pricing structure.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-industry"></i>
+                    <h3>Fabrication & Quality Control</h3>
+                    <p>Precision fabrication in our modern facility with rigorous quality control and testing at every manufacturing stage.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <i class="fas fa-crane"></i>
+                    <h3>Professional Erection</h3>
+                    <p>Expert installation by certified teams using specialized equipment, ensuring structural integrity and safety compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service CTA -->
+    <section class="service-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Steel Fabrication & Erection Services?</h2>
+                <p>Get a custom quote for your steel structure project. Our engineering team is ready to design and deliver the perfect steel solution for your industrial requirements.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn-primary">Get Custom Quote</a>
+                    <a href="tel:+911244567890" class="btn-outline">Call: +91 124 456 7890</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Industrial Area, Sector 15, Gurgaon, Haryana 122001</p>
+                    <p><i class="fas fa-phone"></i> +91 124 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@scaffoldingsupply.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <a href="service-scaffolding.html">Scaffolding Supply & Rental</a>
+                    <a href="service-steel.html">Steel Erection & Fabrication</a>
+                    <a href="service-roofing.html">Roof Sheeting</a>
+                    <a href="service-insulation.html">Thermal Insulation</a>
+                    <a href="service-manpower.html">Manpower Supply</a>
+                    <a href="service-painting.html">Industrial Painting</a>
+                    <a href="service-transport.html">Transport & Logistics</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#quote">Get Quote</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Contact</h3>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="3" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Scaffolding Supply & Services. All rights reserved. | Industrial Solutions Provider</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you within 24 hours to discuss your steel fabrication and erection requirements.');
+            this.reset();
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(13, 47, 78, 0.95)';
+            } else {
+                header.style.background = '#0d2f4e';
+            }
+        });
+
+        // Gallery item hover effects
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+        });
+
+        // Process step animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.process-step').forEach(step => {
+            step.style.opacity = '0';
+            step.style.transform = 'translateY(20px)';
+            step.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(step);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'977b49dec460c1a6',t:'MTc1NjYzMDMxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
