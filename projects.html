@@ -575,57 +575,314 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo">Scaffolding Supply & Services</a>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="quote-btn">Get a Quote</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    
+<!-- Header -->
+<header class="header">
+    <nav class="nav-container">
+        <!-- Logo with hyperlink -->
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Company Logo" class="logo-img">
+        </a>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Our Projects</h1>
-            <p>Showcasing excellence in industrial construction and scaffolding solutions</p>
-        </div>
-    </section>
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="quote-btn">Get a Quote</a></li>
+        </ul>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Projects Completed</p>
-                </div>
-                <div class="stat-item">
-                    <h3>15+</h3>
-                    <p>Years Experience</p>
-                </div>
-                <div class="stat-item">
-                    <h3>50+</h3>
-                    <p>Industrial Clients</p>
-                </div>
-                <div class="stat-item">
-                    <h3>99%</h3>
-                    <p>Safety Record</p>
-                </div>
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<!-- CSS -->
+<style>
+/* Header Base */
+.header {
+    width: 100%;
+    background: #013761; /* Dark Blue */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Container */
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #ffcc00; /* Yellow hover */
+}
+
+/* Quote Button */
+.quote-btn {
+    padding: 10px 18px;
+    background: #ff8800;
+    color: #fff !important;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.quote-btn:hover {
+    background: #e06f00;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff; /* White lines */
+    border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: #013761; /* Same dark blue on mobile */
+        width: 220px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        display: none; /* hidden by default */
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+</style>
+
+<!-- JS (for mobile toggle) -->
+<script>
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+</script>
+
+  <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Our Projects</h1>
+        <p>Showcasing excellence in industrial construction and scaffolding solutions</p>
+        <a href="projects.html" class="hero-btn">Explore Projects</a>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 class="counter" data-target="100">0</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="5">0</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="20">0</h3>
+                <p>Industrial Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="99">0</h3>
+                <p>Safety Record (%)</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- CSS -->
+<style>
+/* Hero Section */
+.hero {
+    background: url('https://www.etscablecomponents.com/wp-content/uploads/2013/11/25-years-construction-projects.jpg') no-repeat center center/cover;
+    height: 70vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Dark overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: auto auto 20px;
+    color: #f0f0f0;
+}
+
+/* CTA Button */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #ff8800;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInBtn 1.6s ease forwards;
+    opacity: 0;
+}
+.hero-btn:hover {
+    background: #e06f00;
+    transform: scale(1.05);
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.8rem;
+    color: #013761;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeInBtn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
+<!-- JS -->
+<script>
+function animateCounter(counter) {
+    const target = +counter.getAttribute("data-target");
+    const duration = 2000;
+    const step = target / (duration / 16);
+
+    let count = 0;
+    function updateCounter() {
+        count += step;
+        if (count < target) {
+            counter.textContent = Math.floor(count) + (target === 99 ? "%" : "+");
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.textContent = target + (target === 99 ? "%" : "+");
+        }
+    }
+    updateCounter();
+}
+
+// Intersection Observer for triggering animation
+const counters = document.querySelectorAll(".counter");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.6 });
+
+counters.forEach(counter => {
+    observer.observe(counter);
+});
+</script>
 
     <!-- Filter Section -->
     <section class="filter-section">
