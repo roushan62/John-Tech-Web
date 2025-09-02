@@ -570,11 +570,10 @@
             <a href="index.html" class="logo">Scaffolding Supply & Services</a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#quote" class="quote-btn">Get a Quote</a></li>
+                <li><a href="Service.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html" class="quote-btn">Get a Quote</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -587,7 +586,7 @@
     <!-- Breadcrumb -->
     <section class="breadcrumb">
         <div class="breadcrumb-content">
-            <a href="index.html">Home</a> > <a href="services.html">Services</a> > Scaffolding Supply & Rental
+            <a href="index.html">Home</a> > <a href="Service.html">Services</a> > Scaffolding Supply & Rental
         </div>
     </section>
 
@@ -679,45 +678,138 @@
         </div>
     </section>
 
-    <!-- Project Gallery -->
-    <section class="project-gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Scaffolding Project Gallery</h2>
-                <p>Showcasing our expertise across various industrial scaffolding applications</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-image">Refinery Maintenance Scaffolding</div>
-                    <div class="gallery-overlay">
-                        <h3>Petrochemical Complex</h3>
-                        <p>Multi-level scaffolding system for major refinery turnaround operations</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">Industrial Plant Access System</div>
-                    <div class="gallery-overlay">
-                        <h3>Manufacturing Facility</h3>
-                        <p>Custom scaffolding solution for equipment maintenance and inspection</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">Power Plant Scaffolding</div>
-                    <div class="gallery-overlay">
-                        <h3>Thermal Power Station</h3>
-                        <p>High-rise scaffolding for boiler maintenance and repair work</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">Chemical Processing Unit</div>
-                    <div class="gallery-overlay">
-                        <h3>Chemical Plant Project</h3>
-                        <p>Specialized scaffolding for hazardous environment operations</p>
-                    </div>
-                </div>
-            </div>
+<!-- Project Gallery -->
+<section class="project-gallery">
+  <div class="container">
+    <div class="section-title">
+      <h2>Scaffolding Project Gallery</h2>
+      <p>Showcasing our expertise across various industrial scaffolding applications</p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Gallery Item 1 -->
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9zy5cbwvr3xXnq3B048uV5qvaEr7T_pR8JLBI9IVJzUAi0ha80sYOr2DkcMzqfHidyY&usqp=CAU" alt="Refinery Maintenance Scaffolding">
         </div>
-    </section>
+        <div class="gallery-overlay">
+          <h3>Petrochemical Complex</h3>
+          <p>Multi-level scaffolding system for major refinery turnaround operations</p>
+        </div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="https://www.hseblog.com/wp-content/uploads/2023/07/Scaffolding-Inspection-How-to-Do-It-and-Why-Its-Important.webp" alt="Industrial Plant Access System">
+        </div>
+        <div class="gallery-overlay">
+          <h3>Manufacturing Facility</h3>
+          <p>Custom scaffolding solution for equipment maintenance and inspection</p>
+        </div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="https://tuyenlam.com//admin/webroot/upload/image/files/13.jpg" alt="Power Plant Scaffolding">
+        </div>
+        <div class="gallery-overlay">
+          <h3>Thermal Power Station</h3>
+          <p>High-rise scaffolding for boiler maintenance and repair work</p>
+        </div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="https://forwardconcept.ca/wp-content/uploads/2024/07/Oil-Gas-Industrial-Scaffolding-Suncor.jpg" alt="Chemical Processing Unit">
+        </div>
+        <div class="gallery-overlay">
+          <h3>Chemical Plant Project</h3>
+          <p>Specialized scaffolding for hazardous environment operations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ CSS -->
+<style>
+.project-gallery {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: #555;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform .4s ease;
+  display: block;
+}
+
+.gallery-item:hover .gallery-image img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity .4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.gallery-overlay p {
+  font-size: 14px;
+}
+</style>
 
     <!-- Process Overview -->
     <section class="process-overview">
@@ -762,8 +854,8 @@
                 <h2>Need Scaffolding for Your Project?</h2>
                 <p>Get a custom quote tailored to your specific requirements. Our experts are ready to provide the perfect scaffolding solution for your industrial project.</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn-primary">Get Custom Quote</a>
-                    <a href="tel:+911244567890" class="btn-outline">Call: +91 124 456 7890</a>
+                    <a href="contact.html" class="btn-primary">Get Custom Quote</a>
+                    <a href="tel:+916204782131" class="btn-outline">Call: +91 6204782131</a>
                 </div>
             </div>
         </div>
@@ -775,9 +867,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Industrial Area, Sector 15, Gurgaon, Haryana 122001</p>
-                    <p><i class="fas fa-phone"></i> +91 124 456 7890</p>
-                    <p><i class="fas fa-envelope"></i> info@scaffoldingsupply.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Shop No.116,Maruti Plaza,Sayan-Sugar Road,Sayan, Olpad, Surat, Gujarat 394130</p>
+                    <p><i class="fas fa-phone"></i> +91 9898526436</p>
+                    <p><i class="fas fa-phone"></i> +91 6204782131</p>
+                    <p><i class="fas fa-envelope"></i> johntechengineers@gmail.com</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -786,22 +879,21 @@
                 </div>
                 <div class="footer-section">
                     <h3>Our Services</h3>
-                    <a href="service-scaffolding.html">Scaffolding Supply & Rental</a>
-                    <a href="service-steel.html">Steel Erection & Fabrication</a>
-                    <a href="service-roofing.html">Roof Sheeting</a>
-                    <a href="service-insulation.html">Thermal Insulation</a>
-                    <a href="service-manpower.html">Manpower Supply</a>
-                    <a href="service-painting.html">Industrial Painting</a>
-                    <a href="service-transport.html">Transport & Logistics</a>
+                    <a href="Scaffolding.html">Scaffolding Supply & Rental</a>
+                    <a href="Erection.html">Steel Erection & Fabrication</a>
+                    <a href="Roofing.html">Roof Sheeting</a>
+                    <a href="Insulation.html">Thermal Insulation</a>
+                    <a href="Manpower-Supply.html">Manpower Supply</a>
+                    <a href="Painting.html">Industrial Painting</a>
+                    <a href="Transport.html">Transport & Logistics</a>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#quote">Get Quote</a>
+                    <a href="Service.html">Services</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="About.html">About Us</a>
+                    <a href="contact.html">Get Quote</a>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Contact</h3>
@@ -814,7 +906,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Scaffolding Supply & Services. All rights reserved. | Industrial Solutions Provider</p>
+                <p>&copy; 2025 John Tech Engineers. All rights reserved. | Industrial Solutions Provider</p>
             </div>
         </div>
     </footer>
