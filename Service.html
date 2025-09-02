@@ -50,8 +50,8 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
             align-items: center;
+            gap: 2rem;
         }
 
         .nav-menu a {
@@ -94,286 +94,37 @@
             transition: 0.3s;
         }
 
-<!-- Hero Section -->
-<section class="hero">
-    <!-- Background Video -->
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="https://youtu.be/HHqYVUe-dq4?si=q0zDIycsIYiMa-Xw" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Overlay -->
-    <div class="hero-overlay"></div>
-
-    <!-- Hero Content -->
-    <div class="hero-content">
-        <h1>Industrial Services Portfolio</h1>
-        <p>High-performance solutions for construction, engineering, and beyond.</p>
-        <div class="hero-buttons">
-            <a href="#services" class="btn-primary">Our Services</a>
-            <a href="#contact" class="btn-outline">Get in Touch</a>
-        </div>
-    </div>
-</section>
-
-<style>
-/* Hero Section */
-.hero {
-    position: relative;
-    height: 50vh;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #ffffff;
-    margin-top: 80px;
-    overflow: hidden;
-}
-
-/* Background Video */
-.hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-/* Gradient Overlay */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(13, 47, 78, 0.8), rgba(13, 47, 78, 0.8));
-    z-index: 2;
-}
-
-/* Hero Content */
-.hero-content {
-    position: relative;
-    z-index: 3;
-}
-
-.hero-content h1 {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* Buttons */
-.btn-primary {
-    background: #e67e22;
-    color: #ffffff;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: #d35400;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    background: transparent;
-    color: #ffffff;
-    padding: 1rem 2rem;
-    border: 2px solid #ffffff;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-    background: #ffffff;
-    color: #0d2f4e;
-}
-</style>
-
-        /* Trust Bar */
-        .trust-bar {
-            background: #f8f9fa;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .trust-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .trust-content h3 {
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .client-logos {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 47, 78, 0.8), rgba(13, 47, 78, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><g fill="%23555"><rect x="100" y="100" width="200" height="400"/><rect x="350" y="150" width="150" height="350"/><rect x="550" y="80" width="180" height="420"/><rect x="780" y="120" width="160" height="380"/><rect x="990" y="90" width="140" height="410"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 80px;
         }
 
-        .client-logo {
+        .hero-content h1 {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.5rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            color: #666;
-            padding: 1rem 2rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            background: #fff;
+            margin-bottom: 1rem;
         }
 
-        /* Service Detail Sections */
-        .service-detail {
-            padding: 4rem 0;
-            border-bottom: 1px solid #eee;
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .service-detail:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .service-detail:last-of-type {
-            border-bottom: none;
-        }
-
-        .service-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .service-content.reverse {
-            direction: rtl;
-        }
-
-        .service-content.reverse > * {
-            direction: ltr;
-        }
-
-        .service-text h2 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 2.2rem;
-            color: #0d2f4e;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-text p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            color: #333;
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .service-features li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #e67e22;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .service-image {
-            width: 100%;
-            height: 350px;
-            background: linear-gradient(135deg, #333, #555);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.1rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .service-btn {
-            background: #e67e22;
-            color: #ffffff;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .service-btn:hover {
-            background: #d35400;
-            transform: translateY(-2px);
-        }
-
-        /* Full Service CTA */
-        .full-service-cta {
-            background: linear-gradient(135deg, #0d2f4e, #1a4c7a);
-            color: #ffffff;
+        /* Services Section */
+        .services-section {
             padding: 5rem 0;
-            text-align: center;
-        }
-
-        .cta-content h2 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            background: #ffffff;
         }
 
         .container {
@@ -384,7 +135,7 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section-title h2 {
@@ -401,144 +152,121 @@
             margin: 0 auto;
         }
 
-        .services-grid {
+        .service-item {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+            padding: 2rem 0;
         }
 
-        .service-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-            border-top: 4px solid #e67e22;
+        .service-item:nth-child(even) .service-content {
+            order: 2;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
+        .service-item:nth-child(even) .service-image {
+            order: 1;
         }
 
-        .service-card i {
-            font-size: 3rem;
-            color: #e67e22;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
+        .service-content h3 {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #0d2f4e;
             margin-bottom: 1rem;
         }
 
-        .service-card p {
+        .service-content p {
             color: #666;
             margin-bottom: 1.5rem;
-        }
-
-        .service-card a {
-            color: #e67e22;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .service-card a:hover {
-            color: #d35400;
-        }
-
-        /* Why Choose Us */
-        .why-choose {
-            padding: 5rem 0;
-            background: #f8f9fa;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .feature-item i {
-            font-size: 3rem;
-            color: #e67e22;
-            margin-bottom: 1rem;
-        }
-
-        .feature-item h3 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.3rem;
-            color: #0d2f4e;
-            margin-bottom: 1rem;
-        }
-
-        .feature-item p {
-            color: #666;
-        }
-
-        /* Projects Gallery */
-        .projects {
-            padding: 5rem 0;
-            background: #ffffff;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(45deg, #333, #555);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
             font-size: 1.1rem;
         }
 
-        .project-overlay {
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #e67e22;
             position: absolute;
-            bottom: 0;
             left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(13, 47, 78, 0.9));
+        }
+
+        .service-btn {
+            background: #1a4c7a;
             color: #ffffff;
-            padding: 2rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
         }
 
-        .project-card:hover .project-overlay {
-            transform: translateY(0);
+        .service-btn:hover {
+            background: #0d2f4e;
         }
 
-        .project-overlay h3 {
+        .service-image {
+            height: 300px;
+            background: #f4f4f4;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #1a4c7a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #0d2f4e;
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: #e67e22;
+            color: #ffffff;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #d35400;
         }
 
         /* Footer */
@@ -557,15 +285,23 @@
 
         .footer-section h3 {
             font-family: 'Roboto Condensed', sans-serif;
-            color: #e67e22;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
+            color: #e67e22;
         }
 
-        .footer-section p, .footer-section a {
-            color: #ccc;
-            text-decoration: none;
+        .footer-section p, .footer-section li {
             margin-bottom: 0.5rem;
-            display: block;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .footer-section a:hover {
@@ -583,13 +319,13 @@
             padding: 0.8rem;
             border: none;
             border-radius: 5px;
-            background: #333;
-            color: #fff;
+            background: #333333;
+            color: #ffffff;
         }
 
         .contact-form button {
             background: #e67e22;
-            color: #fff;
+            color: #ffffff;
             padding: 0.8rem;
             border: none;
             border-radius: 5px;
@@ -608,19 +344,14 @@
         }
 
         .social-icons a {
-            color: #ccc;
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
 
-        .social-icons a:hover {
-            color: #e67e22;
-        }
-
         .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 1rem;
             text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333333;
             color: #999;
         }
 
@@ -650,38 +381,18 @@
                 font-size: 2.5rem;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .service-content {
+            .service-item {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .service-content.reverse {
-                direction: ltr;
+            .service-item:nth-child(even) .service-content,
+            .service-item:nth-child(even) .service-image {
+                order: initial;
             }
 
-            .service-detail {
-                padding: 3rem 0;
-            }
-
-            .service-text h2 {
-                font-size: 1.8rem;
-            }
-
-            .service-image {
-                height: 250px;
-            }
-
-            .cta-content h2 {
-                font-size: 2rem;
-            }
-
-            .cta-content p {
-                font-size: 1.1rem;
+            .footer-content {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -690,14 +401,14 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
-            <a href="#" class="logo">Scaffolding Supply & Services</a>
+            <a href="index.html" class="logo">Scaffolding Supply & Services</a>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#quote" class="quote-btn">Get a Quote</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="quote-btn">Get a Quote</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -708,183 +419,166 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
             <h1>Our Services</h1>
-            <p>Comprehensive industrial solutions tailored for your project requirements</p>
+            <p>Comprehensive industrial solutions for your most demanding projects</p>
         </div>
     </section>
 
-    <!-- Service Detail Sections -->
-    <section class="service-detail" id="scaffolding">
+    <!-- Services Section -->
+    <section class="services-section">
         <div class="container">
-            <div class="service-content">
-                <div class="service-text">
-                    <h2>Scaffolding Supply & Rental</h2>
-                    <p>Premium quality scaffolding systems designed for safe and efficient access solutions across all industrial applications. Our comprehensive scaffolding services ensure your projects meet the highest safety standards while maintaining operational efficiency.</p>
+            <div class="section-title">
+                <h2>Complete Industrial Solutions</h2>
+                <p>From scaffolding to specialized industrial services, we provide end-to-end solutions for construction, oil & gas, and manufacturing projects.</p>
+            </div>
+
+            <!-- Scaffolding Supply & Rental -->
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Scaffolding Supply & Rental</h3>
+                    <p>Professional scaffolding solutions for safe and efficient access to all areas of your project. Our comprehensive inventory includes system scaffolding, tube and clamp, and specialized access equipment.</p>
                     <ul class="service-features">
-                        <li>Complete scaffolding system design and installation</li>
-                        <li>Certified safety inspections and compliance documentation</li>
-                        <li>24/7 emergency support and maintenance services</li>
-                        <li>Flexible rental terms for short and long-term projects</li>
+                        <li>System scaffolding (Ringlock, Cuplock, Kwikstage)</li>
+                        <li>Tube and clamp traditional scaffolding</li>
+                        <li>Mobile towers and rolling scaffolds</li>
+                        <li>Professional installation and dismantling</li>
                     </ul>
                     <a href="service-scaffolding.html" class="service-btn">Learn More</a>
                 </div>
                 <div class="service-image">
-                    <div>Industrial Scaffolding<br>Installation & Rental</div>
+                    <i class="fas fa-hard-hat"></i>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="service-detail" id="steel">
-        <div class="container">
-            <div class="service-content reverse">
-                <div class="service-text">
-                    <h2>Steel Erection & Fabrication</h2>
-                    <p>Expert steel structure design, fabrication, and erection services for industrial facilities and infrastructure projects. Our skilled team delivers precision-engineered solutions that meet stringent industrial requirements and safety standards.</p>
+            <!-- Steel Erection & Fabrication -->
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Steel Erection & Fabrication</h3>
+                    <p>Expert steel fabrication and erection services for industrial structures. From custom fabrication to complex structural installations, our certified team delivers precision engineering.</p>
                     <ul class="service-features">
-                        <li>Custom steel structure design and engineering</li>
-                        <li>Advanced fabrication using modern equipment</li>
-                        <li>Professional erection and installation services</li>
-                        <li>Quality assurance and structural integrity testing</li>
+                        <li>Custom steel fabrication and welding</li>
+                        <li>Structural steel erection and installation</li>
+                        <li>Industrial platforms and walkways</li>
+                        <li>Certified welders and riggers</li>
                     </ul>
                     <a href="service-steel.html" class="service-btn">Learn More</a>
                 </div>
                 <div class="service-image">
-                    <div>Steel Structure<br>Fabrication & Erection</div>
+                    <i class="fas fa-industry"></i>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="service-detail" id="roofing">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-text">
-                    <h2>Roof Sheeting</h2>
-                    <p>Durable roofing solutions including installation, maintenance, and repair of industrial roof sheeting systems. We provide weather-resistant and long-lasting roofing solutions that protect your industrial assets and operations.</p>
+            <!-- Roof Sheeting -->
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Roof Sheeting</h3>
+                    <p>Complete roofing solutions for industrial and commercial buildings. We provide high-quality materials and expert installation for durable, weather-resistant roofing systems.</p>
                     <ul class="service-features">
-                        <li>High-quality industrial roof sheeting materials</li>
-                        <li>Weather-resistant and corrosion-proof installations</li>
-                        <li>Preventive maintenance and repair services</li>
-                        <li>Energy-efficient roofing solutions available</li>
+                        <li>Metal roof sheeting installation</li>
+                        <li>Insulated panel systems</li>
+                        <li>Roof maintenance and repairs</li>
+                        <li>Weatherproofing and sealing</li>
                     </ul>
                     <a href="service-roofing.html" class="service-btn">Learn More</a>
                 </div>
                 <div class="service-image">
-                    <div>Industrial Roof<br>Sheeting & Installation</div>
+                    <i class="fas fa-home"></i>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="service-detail" id="insulation">
-        <div class="container">
-            <div class="service-content reverse">
-                <div class="service-text">
-                    <h2>Thermal Insulation (Hot/Cold)</h2>
-                    <p>Professional hot and cold insulation services to optimize energy efficiency and operational performance. Our thermal insulation solutions help reduce energy costs while maintaining optimal operating temperatures for industrial processes.</p>
+            <!-- Thermal Insulation -->
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Thermal Insulation (Hot/Cold)</h3>
+                    <p>Specialized thermal insulation services for industrial applications. Our expert team handles both hot and cold insulation systems for optimal energy efficiency and safety.</p>
                     <ul class="service-features">
-                        <li>Hot and cold thermal insulation systems</li>
-                        <li>Energy efficiency optimization and cost reduction</li>
-                        <li>Fire-resistant and safety-compliant materials</li>
-                        <li>Custom insulation solutions for specific applications</li>
+                        <li>Hot insulation for pipes and equipment</li>
+                        <li>Cold insulation for refrigeration systems</li>
+                        <li>Fire-resistant insulation materials</li>
+                        <li>Energy efficiency optimization</li>
                     </ul>
                     <a href="service-insulation.html" class="service-btn">Learn More</a>
                 </div>
                 <div class="service-image">
-                    <div>Thermal Insulation<br>Hot & Cold Systems</div>
+                    <i class="fas fa-thermometer-half"></i>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="service-detail" id="manpower">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-text">
-                    <h2>Manpower Supply</h2>
-                    <p>Skilled and certified workforce deployment for industrial projects with comprehensive safety training. Our experienced professionals are equipped to handle complex industrial operations while maintaining the highest safety and quality standards.</p>
+            <!-- Manpower Supply -->
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Manpower Supply</h3>
+                    <p>Skilled and certified workforce for your industrial projects. We provide qualified professionals across all trades, ensuring your project has the right expertise at every stage.</p>
                     <ul class="service-features">
-                        <li>Certified and experienced industrial workforce</li>
-                        <li>Comprehensive safety training and compliance</li>
-                        <li>Flexible staffing solutions for project needs</li>
-                        <li>Specialized skills for various industrial sectors</li>
+                        <li>Certified scaffolders and riggers</li>
+                        <li>Skilled welders and fabricators</li>
+                        <li>Industrial painters and insulators</li>
+                        <li>Project supervisors and safety officers</li>
                     </ul>
                     <a href="service-manpower.html" class="service-btn">Learn More</a>
                 </div>
                 <div class="service-image">
-                    <div>Skilled Manpower<br>Supply & Deployment</div>
+                    <i class="fas fa-users"></i>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="service-detail" id="painting">
-        <div class="container">
-            <div class="service-content reverse">
-                <div class="service-text">
-                    <h2>Industrial Painting</h2>
-                    <p>Specialized coating and painting services for industrial equipment, structures, and facility maintenance. Our protective coating solutions extend asset life and provide superior protection against harsh industrial environments.</p>
+            <!-- Industrial Painting -->
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Industrial Painting</h3>
+                    <p>Professional industrial painting and coating services for protection and aesthetics. Our specialized coatings provide long-lasting protection against corrosion and environmental factors.</p>
                     <ul class="service-features">
-                        <li>Protective coatings for harsh industrial environments</li>
-                        <li>Corrosion prevention and surface preparation</li>
-                        <li>Specialized paints for high-temperature applications</li>
-                        <li>Scheduled maintenance and touch-up services</li>
+                        <li>Anti-corrosive coating systems</li>
+                        <li>Fireproof and chemical-resistant paints</li>
+                        <li>Surface preparation and blasting</li>
+                        <li>Quality control and inspection</li>
                     </ul>
                     <a href="service-painting.html" class="service-btn">Learn More</a>
                 </div>
                 <div class="service-image">
-                    <div>Industrial Painting<br>& Protective Coatings</div>
+                    <i class="fas fa-paint-roller"></i>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="service-detail" id="transport">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-text">
-                    <h2>Transport & Logistics</h2>
-                    <p>Reliable transportation and logistics solutions for materials, equipment, and project coordination. Our comprehensive logistics network ensures timely delivery and efficient project execution across all industrial sectors.</p>
+            <!-- Transport/Logistics -->
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Transport & Logistics</h3>
+                    <p>Comprehensive logistics solutions for industrial equipment and materials. Our fleet and logistics expertise ensure timely delivery and efficient project coordination.</p>
                     <ul class="service-features">
-                        <li>Heavy equipment and material transportation</li>
-                        <li>Project logistics coordination and planning</li>
-                        <li>Specialized vehicles for industrial cargo</li>
-                        <li>Real-time tracking and delivery management</li>
+                        <li>Heavy equipment transportation</li>
+                        <li>Material delivery and coordination</li>
+                        <li>Project logistics planning</li>
+                        <li>Specialized lifting and rigging equipment</li>
                     </ul>
-                    <a href="service-transport.html" class="service-btn">Learn More</a>
+                    <a href="service-logistics.html" class="service-btn">Learn More</a>
                 </div>
                 <div class="service-image">
-                    <div>Transport & Logistics<br>Industrial Solutions</div>
+                    <i class="fas fa-truck"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Full Service CTA -->
-    <section class="full-service-cta">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Complete Turnkey Solutions</h2>
-                <p>From scaffolding to painting, we handle every aspect of your industrial project. Our integrated approach ensures seamless coordination, consistent quality, and on-time delivery across all services.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">Get Started Today</a>
-                    <a href="tel:+911244567890" class="btn-outline">Call Now: +91 124 456 7890</a>
-                </div>
-            </div>
+            <h2>Complete Turnkey Solutions</h2>
+            <p>From scaffolding to painting, we handle every aspect of your industrial project. Our integrated approach ensures seamless coordination, consistent quality, and on-time delivery across all services.</p>
+            <a href="contact.html" class="cta-btn">Get Your Project Quote</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" id="contact">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Industrial Area, Sector 15, Gurgaon, Haryana 122001</p>
-                    <p><i class="fas fa-phone"></i> +91 124 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Industrial Drive, Business District</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
                     <p><i class="fas fa-envelope"></i> info@scaffoldingsupply.com</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -894,41 +588,34 @@
                 </div>
                 <div class="footer-section">
                     <h3>Our Services</h3>
-                    <a href="#scaffolding">Scaffolding Supply & Rental</a>
-                    <a href="#steel">Steel Erection & Fabrication</a>
-                    <a href="#roofing">Roof Sheeting</a>
-                    <a href="#insulation">Thermal Insulation</a>
-                    <a href="#manpower">Manpower Supply</a>
-                    <a href="#painting">Industrial Painting</a>
-                    <a href="#transport">Transport & Logistics</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="#home">Home</a>
-                    <a href="#services">Services</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#quote">Get Quote</a>
+                    <ul>
+                        <li><a href="service-scaffolding.html">Scaffolding Supply & Rental</a></li>
+                        <li><a href="service-steel.html">Steel Erection & Fabrication</a></li>
+                        <li><a href="service-roofing.html">Roof Sheeting</a></li>
+                        <li><a href="service-insulation.html">Thermal Insulation</a></li>
+                        <li><a href="service-manpower.html">Manpower Supply</a></li>
+                        <li><a href="service-painting.html">Industrial Painting</a></li>
+                        <li><a href="service-logistics.html">Transport & Logistics</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Contact</h3>
                     <form class="contact-form">
                         <input type="text" placeholder="Your Name" required>
                         <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" rows="3" required></textarea>
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
                         <button type="submit">Send Message</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Scaffolding Supply & Services. All rights reserved. | Industrial Solutions Provider</p>
+                <p>&copy; 2024 Scaffolding Supply & Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
 
@@ -943,6 +630,13 @@
             navMenu.classList.remove('active');
         }));
 
+        // Contact form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -956,23 +650,6 @@
                 }
             });
         });
-
-        // Contact form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will contact you within 24 hours.');
-            this.reset();
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(13, 47, 78, 0.95)';
-            } else {
-                header.style.background = '#0d2f4e';
-            }
-        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'977b37f0f12f252e',t:'MTc1NjYyOTU3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'978b859f854eff61',t:'MTc1NjgwMDUzMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
