@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Scaffolding Supply & Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #0d2f4e;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #e67e22;
+        }
+
+        .quote-btn {
+            background: #e67e22;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .quote-btn:hover {
+            background: #d35400;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 47, 78, 0.8), rgba(13, 47, 78, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><g fill="%23555"><rect x="50" y="200" width="300" height="300"/><rect x="400" y="150" width="200" height="350"/><rect x="650" y="100" width="250" height="400"/><rect x="950" y="180" width="180" height="320"/></g><g fill="%23777"><circle cx="200" cy="100" r="30"/><circle cx="500" cy="80" r="25"/><circle cx="775" cy="60" r="35"/><circle cx="1040" cy="90" r="28"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #1a4c7a;
+            color: #ffffff;
+            padding: 3rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 3rem;
+            color: #e67e22;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #ffffff;
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #1a4c7a;
+            color: #ffffff;
+            border-color: #1a4c7a;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 5rem 0;
+            background: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.5rem;
+            color: #0d2f4e;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(45deg, #1a4c7a, #0d2f4e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image i {
+            font-size: 4rem;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+        .project-category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #e67e22;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.5rem;
+            color: #0d2f4e;
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .project-detail i {
+            color: #e67e22;
+            width: 16px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background: #f0f0f0;
+            color: #666;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .view-project-btn {
+            background: #1a4c7a;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .view-project-btn:hover {
+            background: #0d2f4e;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: #f8f9fa;
+            padding: 5rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #e67e22;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: #1a4c7a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: #0d2f4e;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #0d2f4e;
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: #e67e22;
+            color: #ffffff;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #d35400;
+        }
+
+        /* Footer */
+        .footer {
+            background: #222222;
+            color: #ffffff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #e67e22;
+        }
+
+        .footer-section p, .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #e67e22;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333333;
+            color: #999;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: #0d2f4e;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .filter-buttons {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding: 0 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-details {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Scaffolding Supply & Services</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="quote-btn">Get a Quote</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Projects</h1>
+            <p>Showcasing excellence in industrial construction and scaffolding solutions</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Industrial Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99%</h3>
+                    <p>Safety Record</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="oil-gas">Oil & Gas</button>
+                <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+                <button class="filter-btn" data-filter="power">Power Plants</button>
+                <button class="filter-btn" data-filter="marine">Marine</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p>Explore our portfolio of successful industrial projects across various sectors</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="oil-gas">
+                    <div class="project-image">
+                        <i class="fas fa-oil-well"></i>
+                        <div class="project-category">Oil & Gas</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Petrochemical Refinery Expansion</h3>
+                        <p>Complete scaffolding and steel erection for a major refinery expansion project, including complex access solutions for maintenance operations.</p>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>18 Months</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-users"></i>
+                                <span>150 Workers</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-ruler"></i>
+                                <span>50,000 sq ft</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Texas, USA</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Scaffolding</span>
+                            <span class="project-tag">Steel Erection</span>
+                            <span class="project-tag">Insulation</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openModal('project1')">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="manufacturing">
+                    <div class="project-image">
+                        <i class="fas fa-industry"></i>
+                        <div class="project-category">Manufacturing</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Automotive Assembly Plant</h3>
+                        <p>Comprehensive industrial services for a new automotive manufacturing facility, including roof sheeting and thermal insulation systems.</p>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>12 Months</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-users"></i>
+                                <span>200 Workers</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-ruler"></i>
+                                <span>75,000 sq ft</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Michigan, USA</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Roof Sheeting</span>
+                            <span class="project-tag">Insulation</span>
+                            <span class="project-tag">Painting</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openModal('project2')">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="construction">
+                    <div class="project-image">
+                        <i class="fas fa-building"></i>
+                        <div class="project-category">Construction</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>High-Rise Commercial Complex</h3>
+                        <p>Multi-story scaffolding solution for a 40-story commercial building, providing safe access for construction and finishing work.</p>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>24 Months</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-users"></i>
+                                <span>300 Workers</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-ruler"></i>
+                                <span>40 Stories</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>New York, USA</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Scaffolding</span>
+                            <span class="project-tag">Manpower</span>
+                            <span class="project-tag">Logistics</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openModal('project3')">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="power">
+                    <div class="project-image">
+                        <i class="fas fa-bolt"></i>
+                        <div class="project-category">Power Plant</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Natural Gas Power Station</h3>
+                        <p>Specialized scaffolding and maintenance access for turbine installation and ongoing maintenance operations at a 500MW facility.</p>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>15 Months</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-users"></i>
+                                <span>180 Workers</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-ruler"></i>
+                                <span>500MW Capacity</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>California, USA</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Scaffolding</span>
+                            <span class="project-tag">Steel Work</span>
+                            <span class="project-tag">Insulation</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openModal('project4')">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="marine">
+                    <div class="project-image">
+                        <i class="fas fa-ship"></i>
+                        <div class="project-category">Marine</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Offshore Platform Maintenance</h3>
+                        <p>Specialized marine scaffolding and access solutions for offshore oil platform maintenance and inspection operations.</p>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>8 Months</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-users"></i>
+                                <span>120 Workers</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-ruler"></i>
+                                <span>Offshore Platform</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Gulf of Mexico</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Marine Scaffolding</span>
+                            <span class="project-tag">Painting</span>
+                            <span class="project-tag">Logistics</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openModal('project5')">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="manufacturing">
+                    <div class="project-image">
+                        <i class="fas fa-cogs"></i>
+                        <div class="project-category">Manufacturing</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Steel Mill Modernization</h3>
+                        <p>Complete industrial renovation including new steel structures, thermal insulation, and protective coating systems for enhanced efficiency.</p>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>20 Months</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-users"></i>
+                                <span>250 Workers</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-ruler"></i>
+                                <span>100,000 sq ft</span>
+                            </div>
+                            <div class="project-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Pennsylvania, USA</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Steel Fabrication</span>
+                            <span class="project-tag">Insulation</span>
+                            <span class="project-tag">Painting</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openModal('project6')">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about our work</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Scaffolding Supply & Services delivered exceptional results on our refinery project. Their attention to safety and quality was outstanding, and they completed the work ahead of schedule.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>John Martinez</h4>
+                            <p>Project Manager, PetroTech Industries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        The team's expertise in complex scaffolding solutions was evident throughout our manufacturing facility construction. Professional, reliable, and safety-focused.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <h4>Sarah Kim</h4>
+                            <p>Construction Director, AutoBuild Corp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Outstanding service from start to finish. Their integrated approach to scaffolding, steel work, and insulation saved us time and ensured consistent quality across all trades.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RJ</div>
+                        <div class="author-info">
+                            <h4>Robert Johnson</h4>
+                            <p>Operations Manager, PowerGen Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Join hundreds of satisfied clients who trust us with their most challenging industrial projects. Let's discuss how we can bring your vision to life.</p>
+            <a href="contact.html" class="cta-btn">Get Your Project Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Industrial Drive, Business District</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@scaffoldingsupply.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="service-scaffolding.html">Scaffolding Supply & Rental</a></li>
+                        <li><a href="service-steel.html">Steel Erection & Fabrication</a></li>
+                        <li><a href="service-roofing.html">Roof Sheeting</a></li>
+                        <li><a href="service-insulation.html">Thermal Insulation</a></li>
+                        <li><a href="service-manpower.html">Manpower Supply</a></li>
+                        <li><a href="service-painting.html">Industrial Painting</a></li>
+                        <li><a href="service-logistics.html">Transport & Logistics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Scaffolding Supply & Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeBtn = document.querySelector('.close');
+
+        const projectDetails = {
+            project1: {
+                title: 'Petrochemical Refinery Expansion',
+                description: 'A comprehensive industrial project involving complex scaffolding solutions, steel erection, and thermal insulation for a major petrochemical refinery expansion.',
+                details: [
+                    'Project Duration: 18 months',
+                    'Team Size: 150 skilled workers',
+                    'Project Area: 50,000 square feet',
+                    'Location: Texas, USA',
+                    'Services: Scaffolding, Steel Erection, Thermal Insulation'
+                ],
+                challenges: 'Working in a live refinery environment required strict safety protocols and specialized equipment. The project involved working at heights up to 200 feet with complex access requirements.',
+                solution: 'We implemented a phased approach using system scaffolding with specialized platforms for equipment access. Our team worked closely with plant operations to ensure zero disruption to ongoing processes.',
+                results: 'Project completed 2 weeks ahead of schedule with zero safety incidents. Client reported 15% improvement in maintenance efficiency due to our access solutions.'
+            },
+            project2: {
+                title: 'Automotive Assembly Plant',
+                description: 'Complete industrial construction services for a new automotive manufacturing facility, including roof systems and thermal management.',
+                details: [
+                    'Project Duration: 12 months',
+                    'Team Size: 200 skilled workers',
+                    'Project Area: 75,000 square feet',
+                    'Location: Michigan, USA',
+                    'Services: Roof Sheeting, Thermal Insulation, Industrial Painting'
+                ],
+                challenges: 'Tight construction schedule with multiple trades working simultaneously. Weather conditions and precision requirements for automotive manufacturing standards.',
+                solution: 'Coordinated multi-trade approach with detailed scheduling and weather contingency plans. Used high-performance insulation systems to meet automotive industry standards.',
+                results: 'Facility operational on schedule with energy efficiency exceeding design specifications by 12%. Client awarded us additional projects based on performance.'
+            },
+            project3: {
+                title: 'High-Rise Commercial Complex',
+                description: 'Multi-story scaffolding solution providing safe access for construction and finishing work on a 40-story commercial building.',
+                details: [
+                    'Project Duration: 24 months',
+                    'Team Size: 300 skilled workers',
+                    'Building Height: 40 stories',
+                    'Location: New York, USA',
+                    'Services: Scaffolding, Manpower Supply, Logistics'
+                ],
+                challenges: 'Urban environment with limited space, high winds at elevation, and coordination with multiple contractors on a fast-track schedule.',
+                solution: 'Implemented modular scaffolding system with wind-resistant design. Established dedicated logistics coordination center for material flow and worker safety.',
+                results: 'Zero lost-time incidents over 24 months. Scaffolding system became a model for other high-rise projects in the city.'
+            },
+            project4: {
+                title: 'Natural Gas Power Station',
+                description: 'Specialized scaffolding and maintenance access for turbine installation and ongoing operations at a 500MW power generation facility.',
+                details: [
+                    'Project Duration: 15 months',
+                    'Team Size: 180 skilled workers',
+                    'Capacity: 500MW power generation',
+                    'Location: California, USA',
+                    'Services: Scaffolding, Steel Work, Thermal Insulation'
+                ],
+                challenges: 'Working around high-voltage equipment and turbine machinery requiring precision access solutions and specialized safety protocols.',
+                solution: 'Designed custom scaffolding systems with electrical isolation and vibration dampening. Implemented specialized training for all personnel.',
+                results: 'Turbine installation completed on schedule with maintenance access systems reducing future downtime by 30%.'
+            },
+            project5: {
+                title: 'Offshore Platform Maintenance',
+                description: 'Specialized marine scaffolding and access solutions for offshore oil platform maintenance and inspection operations.',
+                details: [
+                    'Project Duration: 8 months',
+                    'Team Size: 120 skilled workers',
+                    'Environment: Offshore marine platform',
+                    'Location: Gulf of Mexico',
+                    'Services: Marine Scaffolding, Industrial Painting, Logistics'
+                ],
+                challenges: 'Harsh marine environment, limited helicopter access, and need for corrosion-resistant materials and coatings.',
+                solution: 'Used marine-grade scaffolding materials with specialized coatings. Implemented helicopter logistics coordination and weather monitoring systems.',
+                results: 'Extended platform service life by 10 years through comprehensive maintenance access and protective coating systems.'
+            },
+            project6: {
+                title: 'Steel Mill Modernization',
+                description: 'Complete industrial renovation including new steel structures, thermal insulation, and protective coating systems.',
+                details: [
+                    'Project Duration: 20 months',
+                    'Team Size: 250 skilled workers',
+                    'Project Area: 100,000 square feet',
+                    'Location: Pennsylvania, USA',
+                    'Services: Steel Fabrication, Thermal Insulation, Industrial Painting'
+                ],
+                challenges: 'Working in active steel mill with extreme temperatures, dust, and the need to maintain production during modernization.',
+                solution: 'Phased approach allowing continued production. Used high-temperature resistant materials and specialized ventilation systems for worker safety.',
+                results: 'Mill efficiency improved by 25% with new insulation systems. Project completed without production interruption.'
+            }
+        };
+
+        function openModal(projectId) {
+            const project = projectDetails[projectId];
+            if (project) {
+                modalContent.innerHTML = `
+                    <h2>${project.title}</h2>
+                    <p><strong>Project Overview:</strong> ${project.description}</p>
+                    <h3>Project Details</h3>
+                    <ul>
+                        ${project.details.map(detail => `<li>${detail}</li>`).join('')}
+                    </ul>
+                    <h3>Challenges</h3>
+                    <p>${project.challenges}</p>
+                    <h3>Our Solution</h3>
+                    <p>${project.solution}</p>
+                    <h3>Results</h3>
+                    <p>${project.results}</p>
+                `;
+                modal.style.display = 'block';
+            }
+        }
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe project cards for animation
+        projectCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'978c5edd327f3ae5',t:'MTc1NjgwOTQzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
